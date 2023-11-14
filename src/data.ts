@@ -1,4 +1,4 @@
-type Product = {
+ type Product = {
   id: number;
   title: string;
   desc?: string;

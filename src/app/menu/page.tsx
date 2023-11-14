@@ -1,9 +1,24 @@
 import React from 'react'
-import { menu } from '@/data'
 import Link from 'next/link'
 import { Box, Card, CardActionArea, CardMedia, CardContent, Typography } from '@mui/material'
+import { MenuType } from '@/types/types'
 
-const MenuPage = () => {
+const getData = async ()=>{
+const res = await fetch("http://localhost:3000/api/categories",{
+  // Not catching for development purposes
+  cache:"no-store"
+})
+
+if(!res.ok){
+  throw new Error("FAILED!");
+}
+
+return res.json()
+}
+
+const MenuPage = async () => {
+
+  const menu:MenuType = await getData();
   return (
     // <div className='p-4 xl:px-40 lg:px-20 h-[calc(100vh-6rem)] md:h-[calc(100vh-6rem)] flex flex-col md:flex-row items-center'>
 

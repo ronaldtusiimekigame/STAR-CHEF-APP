@@ -3,11 +3,32 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { Box, Card, CardActionArea, CardMedia, CardContent, Typography } from '@mui/material'
+import { ProductType } from '@/types/types'
 
-const page = () => {
+
+const getData = async (drinks: string) => {
+  const res = await fetch("http://localhost:3000/api/products?cat=drinks", {
+    // Not catching for development purposes
+    cache: "no-store"
+  })
+
+  if (!res.ok) {
+    throw new Error("FAILED!");
+  }
+
+  return res.json()
+}
+
+type Props = {
+  params: { drinks: string }
+}
+
+const page = async ({ params }: Props) => {
+
+  const products: ProductType[] = await getData(params.drinks)
     return (
         <div className='flex flex-wrap' style={{ color: '#213b5e' }}>
-          {drinks.map((item) => (
+          {products.map((item) => (
     
             // {/* We use a feature in tailwind called group  that allows us to group hover*/}
             <Link className="w-full h-[80vh] border-r-2 border-b-2 sm:w-1/2 lg:w-1/3 p-4 flex flex-col justify-between group "href={`/product/${item.id}`} key={item.id}>

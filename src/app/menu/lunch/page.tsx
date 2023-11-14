@@ -3,8 +3,29 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { Box, Card, CardActionArea, CardMedia, CardContent, Typography } from '@mui/material'
+import { ProductType } from '@/types/types'
 
-const page = () => {
+
+const getData = async (lunch: string) => {
+  const res = await fetch("http://localhost:3000/api/products?cat=lunch", {
+    // Not catching for development purposes
+    cache: "no-store"
+  })
+
+  if (!res.ok) {
+    throw new Error("FAILED!");
+  }
+
+  return res.json()
+}
+
+type Props = {
+  params: { lunch: string }
+}
+
+const page = async ({ params }: Props) => {
+
+  const products: ProductType[] = await getData(params.lunch)
   return (
     // <div className='flex flex-wrap' style={{ color: '#213b5e' }}>
     //   {lunch.map((item) => (
@@ -42,7 +63,7 @@ const page = () => {
       {/* Menu card items */}
       <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
 
-        {lunch.map(item => (
+        {products.map(item => (
           <div className="relative" key={item.id}>
             <Card key={item.id} sx={{ maxWidth: '550px', display: 'flex', m: 3, minHeight: '500px' }}>
 
