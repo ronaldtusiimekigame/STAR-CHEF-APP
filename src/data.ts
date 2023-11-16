@@ -1,26 +1,24 @@
- type Product = {
+type Product = {
   id: number;
   title: string;
   desc?: string;
-  cat: string;
   img?: string;
   price: number;
   options?: { title: string; additionalPrice: number }[];
 };
 
-export type Products = Product[];
+type Products = Product[];
 
-export const lunch: Products = [
+export const featuredProducts: Products = [
   {
     id: 1,
-    title: "BBQ Chicken Wings",
-    cat: "Lunch Meals",
-    desc: "Ignite your taste buds with a fiery combination of chicken delivering a kick with every bite.",
-    img: "/temporary/lunch1.jpg",
-    price: 24500,
+    title: "Sicilian",
+    desc: "Ignite your taste buds with a fiery combination of spicy pepperoni, jalapeños, crushed red pepper flakes, and melted mozzarella cheese, delivering a kick with every bite.",
+    img: "/temporary/p1.png",
+    price: 24.9,
     options: [
       {
-        title: "small",
+        title: "Small",
         additionalPrice: 0,
       },
       {
@@ -35,11 +33,10 @@ export const lunch: Products = [
   },
   {
     id: 2,
-    title: "The Pizza Javas Special",
-    cat: "Lunch Meals",
-    desc: "Embark on a culinary journey with this Mediterranean-inspired creation.",
-    img: "/temporary/lunch2.jpg",
-    price: 32500,
+    title: "Bacon Deluxe",
+    desc: "Indulge in smoky goodness with a flame-grilled beef patty, topped with crispy bacon, melted cheddar cheese, caramelized onions, and a smattering of tangy BBQ sauce.",
+    img: "/temporary/p2.png",
+    price: 29.9,
     options: [
       {
         title: "Small",
@@ -57,11 +54,10 @@ export const lunch: Products = [
   },
   {
     id: 3,
-    title: "Crispy Chicken Burger",
-    cat: "Lunch Meals",
-    desc: "A classic delight featuring crispy crust chicken",
-    img: "/temporary/lunch3.jpg",
-    price: 26500,
+    title: "Bella Napoli",
+    desc: "A classic Italian delight featuring a thin, crispy crust, tangy tomato sauce, fresh mozzarella, and a medley of aromatic herbs topped with lettuce, tomatoes, and a dollop of tangy mayo.",
+    img: "/temporary/p3.png",
+    price: 24.9,
     options: [
       {
         title: "Small",
@@ -76,20 +72,16 @@ export const lunch: Products = [
         additionalPrice: 6,
       },
     ],
-  }
-];
-
-export const breakfast: Products = [
+  },
   {
     id: 4,
-    title: "Eggs with Steak and Home Fries",
-    cat: "Breakfast",
-    desc: "**And Black Tea Ignite your taste buds with a fiery combination of chicken delivering a kick with every bite.",
-    img: "/temporary/breakfast1.jpg",
-    price: 24500,
+    title: "Spicy Arrabbiata",
+    desc: "Ignite your taste buds with this fiery pasta creation, combining penne in a spicy tomato sauce infused with garlic, red chili flakes, and fresh basil for the ultimate comfort food experience.",
+    img: "/temporary/p4.png",
+    price: 26.9,
     options: [
       {
-        title: "small",
+        title: "Small",
         additionalPrice: 0,
       },
       {
@@ -104,11 +96,10 @@ export const breakfast: Products = [
   },
   {
     id: 5,
-    title: "The Chapati Combo",
-    cat: "Breakfast",
-    desc: "Embark on a culinary journey with this Mediterranean-inspired creation, featuring zesty feta cheese, Kalamata olives, sun-dried tomatoes, and a sprinkle of oregano.",
-    img: "/temporary/breakfast2.jpg",
-    price: 32500,
+    title: "Jalapeño Fiesta",
+    desc: "Ignite your taste buds with a fiery kick! This burger features a succulent beef patty, fiery jalapeños, pepper jack cheese, and a zesty chipotle mayo sauce , and all the classic fixings on a toasted bun.",
+    img: "/temporary/p5.png",
+    price: 29.9,
     options: [
       {
         title: "Small",
@@ -126,11 +117,10 @@ export const breakfast: Products = [
   },
   {
     id: 6,
-    title: "Monte Cristo Sandwich Combo",
-    cat: "Breakfast",
-    desc: "A classic delight featuring crispy crust chicken",
-    img: "/temporary/breakfast3.jpg",
-    price: 26500,
+    title: "Margherita Magic",
+    desc: "A timeless favorite with a twist, showcasing a thin crust topped with sweet tomatoes, fresh basil, creamy mozzarella, and a drizzle of extra virgin olive oil, fresh arugula, and a drizzle of balsamic glaze.",
+    img: "/temporary/p6.png",
+    price: 24.9,
     options: [
       {
         title: "Small",
@@ -145,20 +135,16 @@ export const breakfast: Products = [
         additionalPrice: 6,
       },
     ],
-  }
-];
-
-export const drinks: Products = [
+  },
   {
     id: 7,
-    title: "Freshly Squeezed Juice",
-    cat: "Drinks",
-    desc: "Ignite your taste buds with a fiery combination of chicken delivering a kick with every bite.",
-    img: "/temporary/drink1.jpg",
-    price: 24500,
+    title: "Garlic Parmesan Linguine",
+    desc: "A garlic lover's delight, featuring linguine smothered in a creamy Parmesan sauce, infused with garlic and garnished with chopped parsley, bell peppers, and cherry tomatoes.",
+    img: "/temporary/p7.png",
+    price: 28.9,
     options: [
       {
-        title: "small",
+        title: "Small",
         additionalPrice: 0,
       },
       {
@@ -173,11 +159,10 @@ export const drinks: Products = [
   },
   {
     id: 8,
-    title: "Lemonades",
-    cat: "Drinks",
+    title: "Mediterranean Delight",
     desc: "Embark on a culinary journey with this Mediterranean-inspired creation, featuring zesty feta cheese, Kalamata olives, sun-dried tomatoes, and a sprinkle of oregano.",
-    img: "/temporary/drink2.jpg",
-    price: 32500,
+    img: "/temporary/p8.png",
+    price: 32.9,
     options: [
       {
         title: "Small",
@@ -195,11 +180,10 @@ export const drinks: Products = [
   },
   {
     id: 9,
-    title: "Coladas",
-    cat: "Drinks",
-    desc: "A classic delight featuring crispy crust chicken",
-    img: "/temporary/drink3.jpg",
-    price: 26500,
+    title: "Hawaiian Teriyaki",
+    desc: "Experience a taste of the tropics with a juicy beef patty glazed in tangy teriyaki sauce, topped with grilled pineapple, crispy bacon, and fresh lettuce, and all the classic fixings on a toasted bun.",
+    img: "/temporary/p9.png",
+    price: 29.9,
     options: [
       {
         title: "Small",
@@ -214,39 +198,40 @@ export const drinks: Products = [
         additionalPrice: 6,
       },
     ],
-  }
+  },
 ];
 
-export const singleProduct: Products = [
+
+
+
+export const pizzas: Products = [
   {
     id: 1,
-    title: "BBQ Chicken Wings",
-    cat: "Lunch Meals",
-    desc: "Ignite your taste buds with a fiery combination of chicken delivering a kick with every bite.",
-    img: "/temporary/lunch1.jpg",
-    price: 24500,
+    title: "Sicilian",
+    desc: "Ignite your taste buds with a fiery combination of spicy pepperoni, jalapeños, crushed red pepper flakes, and melted mozzarella cheese, delivering a kick with every bite.",
+    img: "/temporary/p1.png",
+    price: 24.9,
     options: [
       {
-        title: "small",
+        title: "Small",
         additionalPrice: 0,
       },
       {
         title: "Medium",
-        additionalPrice: 4000,
+        additionalPrice: 4,
       },
       {
         title: "Large",
-        additionalPrice: 6000,
+        additionalPrice: 6,
       },
     ],
   },
   {
     id: 2,
-    title: "The Pizza Javas Special",
-    cat: "Lunch Meals",
-    desc: "Embark on a culinary journey with this Mediterranean-inspired creation.",
-    img: "/temporary/lunch2.jpg",
-    price: 32500,
+    title: "Mediterranean Delight",
+    desc: "Embark on a culinary journey with this Mediterranean-inspired creation, featuring zesty feta cheese, Kalamata olives, sun-dried tomatoes, and a sprinkle of oregano.",
+    img: "/temporary/p8.png",
+    price: 32.9,
     options: [
       {
         title: "Small",
@@ -254,21 +239,20 @@ export const singleProduct: Products = [
       },
       {
         title: "Medium",
-        additionalPrice: 4000,
+        additionalPrice: 4,
       },
       {
         title: "Large",
-        additionalPrice: 6000,
+        additionalPrice: 6,
       },
     ],
   },
   {
     id: 3,
-    title: "Crispy Chicken Burger",
-    cat: "Lunch Meals",
-    desc: "A classic delight featuring crispy crust chicken",
-    img: "/temporary/lunch3.jpg",
-    price: 26500,
+    title: "Bella Napoli",
+    desc: "A classic Italian delight featuring a thin, crispy crust, tangy tomato sauce, fresh mozzarella, and a medley of aromatic herbs topped with lettuce, tomatoes, and a dollop of tangy mayo.",
+    img: "/temporary/p3.png",
+    price: 26.9,
     options: [
       {
         title: "Small",
@@ -276,43 +260,41 @@ export const singleProduct: Products = [
       },
       {
         title: "Medium",
-        additionalPrice: 4000,
+        additionalPrice: 4,
       },
       {
         title: "Large",
-        additionalPrice: 6000,
+        additionalPrice: 6,
       },
     ],
   },
   {
     id: 4,
-    title: "Well-Done Eggs with Steak and Home Fries",
-    cat: "Breakfast",
-    desc: "Ignite your taste buds with a fiery combination of chicken delivering a kick with every bite.",
-    img: "/temporary/breakfast1.jpg",
-    price: 24500,
+    title: "Pesto Primavera",
+    desc: "A classic Italian delight featuring a thin, crispy crust, tangy tomato sauce, fresh mozzarella, and a medley of aromatic herbs topped with lettuce, tomatoes, and a dollop of tangy mayo.",
+    img: "/temporary/p10.png",
+    price: 28.9,
     options: [
       {
-        title: "standard",
+        title: "Small",
         additionalPrice: 0,
       },
       {
-        title: "With Black-Tea",
-        additionalPrice: 4000,
+        title: "Medium",
+        additionalPrice: 4,
       },
       {
-        title: "With Milk-Tea",
-        additionalPrice: 6000,
+        title: "Large",
+        additionalPrice: 6,
       },
     ],
   },
   {
     id: 5,
-    title: "The Chapati Combo",
-    cat: "Breakfast",
-    desc: "Embark on a culinary journey with this Mediterranean-inspired creation, featuring zesty feta cheese, Kalamata olives, sun-dried tomatoes, and a sprinkle of oregano.",
-    img: "/temporary/breakfast2.jpg",
-    price: 32500,
+    title: "Veggie Supreme",
+    desc: "A classic Italian delight featuring a thin, crispy crust, tangy tomato sauce, fresh mozzarella, and a medley of aromatic herbs topped with lettuce, tomatoes, and a dollop of tangy mayo.",
+    img: "/temporary/p11.png",
+    price: 24.9,
     options: [
       {
         title: "Small",
@@ -320,21 +302,20 @@ export const singleProduct: Products = [
       },
       {
         title: "Medium",
-        additionalPrice: 4000,
+        additionalPrice: 4,
       },
       {
         title: "Large",
-        additionalPrice: 6000,
+        additionalPrice: 6,
       },
     ],
   },
   {
     id: 6,
-    title: "Monte Cristo Sandwich Combo",
-    cat: "Breakfast",
-    desc: "A classic delight featuring crispy crust chicken",
-    img: "/temporary/breakfast3.jpg",
-    price: 26500,
+    title: "Four Cheese Fantasy",
+    desc: "Experience pure cheesy bliss with a melty blend of mozzarella, cheddar, provolone, and Parmesan cheeses, creating a rich and indulgent pizza experience.",
+    img: "/temporary/p12.png",
+    price: 22.9,
     options: [
       {
         title: "Small",
@@ -342,81 +323,37 @@ export const singleProduct: Products = [
       },
       {
         title: "Medium",
-        additionalPrice: 4000,
+        additionalPrice: 4,
       },
       {
         title: "Large",
-        additionalPrice: 6000,
+        additionalPrice: 6,
       },
     ],
   },
-  {
-    id: 7,
-    title: "Freshly Squeezed Juice",
-    cat: "Drinks",
-    desc: "Ignite your taste buds with a fiery combination of chicken delivering a kick with every bite.",
-    img: "/temporary/drink1.jpg",
-    price: 24500,
-    options: [
-      {
-        title: "small",
-        additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4000,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6000,
-      },
-    ],
-  },
-  {
-    id: 8,
-    title: "Lemonades",
-    cat: "Drinks",
-    desc: "Embark on a culinary journey with this Mediterranean-inspired creation, featuring zesty feta cheese, Kalamata olives, sun-dried tomatoes, and a sprinkle of oregano.",
-    img: "/temporary/drink2.jpg",
-    price: 32500,
-    options: [
-      {
-        title: "Small",
-        additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4000,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6000,
-      },
-    ],
-  },
-  {
-    id: 9,
-    title: "Coladas",
-    cat: "Drinks",
-    desc: "A classic delight featuring crispy crust chicken",
-    img: "/temporary/drink3.jpg",
-    price: 26500,
-    options: [
-      {
-        title: "Small",
-        additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4000,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6000,
-      },
-    ],
-  }
 ];
+
+export const singleProduct: Product = {
+  id: 1,
+  title: "Sicilian",
+  desc: "Ignite your taste buds with a fiery combination of spicy pepperoni, jalapeños, crushed red pepper flakes, and melted mozzarella cheese, delivering a kick with every bite.",
+  img: "/temporary/p1.png",
+  price: 24.9,
+  options: [
+    {
+      title: "Small",
+      additionalPrice: 0,
+    },
+    {
+      title: "Medium",
+      additionalPrice: 4,
+    },
+    {
+      title: "Large",
+      additionalPrice: 6,
+    },
+  ],
+};
 
 
 type Menu = {
@@ -431,26 +368,26 @@ type Menu = {
 export const menu: Menu = [
   {
     id: 1,
-    slug: "breakfast",
-    title: "Breakfast",
-    desc: "Indulge in fresh, delightful morning flavors that awaken your senses. Start your day with us!",
-    img: "/temporary/breakfast.jpg",
-    color: "#e6e8e1",
+    slug: "pastas",
+    title: "Italian Pastas",
+    desc: "Savor the taste of perfection with our exquisite Italian handmade pasta menu.",
+    img: "/temporary/m1.png",
+    color: "white",
   },
   {
     id: 2,
-    slug: "lunch",
-    title: "Lunch Meals",
-    desc: "Experience a midday feast with our diverse menu, offering savory bites and hearty salads.",
-    img: "/temporary/lunch.jpg",
-    color: "#e6e8e1",
+    slug: "burgers",
+    title: "Juicy Burgers",
+    desc: "Burger Bliss: Juicy patties, bold flavors, and gourmet toppings galore.",
+    img: "/temporary/m2.png",
+    color: "black",
   },
   {
     id: 3,
-    slug: "drinks",
-    title: "Drinks",
-    desc: "Sip joy from our refreshing drink selections, crafted to elevate your dining experience.",
-    img: "/temporary/drinks.jpg",
-    color: "#e6e8e1",
+    slug: "pizzas",
+    title: "Cheesy Pizzas",
+    desc: "Pizza Paradise: Irresistible slices, mouthwatering toppings, and cheesy perfection.",
+    img: "/temporary/m3.png",
+    color: "white",
   },
 ];

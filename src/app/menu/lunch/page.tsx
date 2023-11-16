@@ -1,4 +1,3 @@
-import { lunch } from '@/data'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -75,7 +74,6 @@ const page = async ({ params }: Props) => {
                     src={item.img}
                     alt={item.title}
                   />
-
 
                   <CardContent>
                     {/* NOTE: removed fontweight: 600 */}

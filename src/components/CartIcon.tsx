@@ -1,20 +1,44 @@
 "use client"
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
+import { useCartStore } from "@/utils/store";
+import { useSession } from "next-auth/react";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useEffect } from "react";
 
 const CartIcon = () => {
-    return (
-        <Link href="/cart" className="flex items-center gap-4">
+  const { data: session, status } = useSession();
 
-            <div className="relative w-6 h-6 md:w-5 md:h-5">
-                <Image src="/cart.png" alt="" fill />
-            </div>
-            
-            {/* Visible on medium to big screens only */}
-            <span className="hidden md:block sm:block">Cart (3)</span>
-        </Link>
-    )
-}
+  const { totalItems } = useCartStore();
 
-export default CartIcon
+  useEffect(() => {
+    useCartStore.persist.rehydrate();
+  }, []);
+
+  useEffect(()=>{
+    useCartStore.persist.rehydrate()
+  },[])
+  return (
+    <Link href={session?.user.isAdmin ? "/add" : "/cart"}>
+      <div className="flex items-center gap-4">
+        <div className="relative w-8 h-8 md:w-5 md:h-5">
+          <Image
+            src="/cart.png"
+            alt=""
+            fill
+            sizes="100%"
+            className="object-contain"
+          />
+        </div>
+        {session?.user.isAdmin ? (
+          <button className="p-1 bg-[#213b5e] text-white rounded-md">Add product</button>
+        ) : (
+
+          // Visible
+          <span>Cart ({totalItems})</span>
+        )}
+      </div>
+    </Link>
+  );
+};
+
+export default CartIcon;
